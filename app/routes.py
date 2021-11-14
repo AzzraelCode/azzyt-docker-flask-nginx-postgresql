@@ -18,6 +18,7 @@ def name():
     n = Names.query.order_by(func.random()).first()
     return jsonify({"names" : "%s = %d" % (n.name, n.amount) })
 
+# http://azzrael_code.yt/add_random
 @bp.route("/add_random")
 def add_random():
     n = Names()

@@ -6,9 +6,9 @@ services:
   app:
     build: ./app
     container_name: flask_azz_yt
-    command: gunicorn --bind 0.0.0.0:5000 app:app
+    command: gunicorn --bind 0.0.0.0:5000 app:app # WSGI server
     environment:
-      - DATABASE_URL=postgresql://az_user:az_psw@db:5432/az_dbname
+      - DATABASE_URL=postgresql://az_user:az_psw@db:5432/az_dbname # путь до бд, см. db service
     volumes:
       - ./app:/app
     expose:
